@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
             event.preventDefault(); // Prevent default form submission
 
             // Initialize EmailJS with your Public Key before sending
-            emailjs.init("Yc8u0fkIdSiqmWEbIY"); // Replace with your actual Public Key from EmailJS
+            emailjs.init("c8u0fkIdSiqmWEbIY"); // Replace with your actual Public Key from EmailJS
 
             // Define the EmailJS service and template IDs
             const serviceID = 'service_z35tdht'; // Replace with your actual Service ID
