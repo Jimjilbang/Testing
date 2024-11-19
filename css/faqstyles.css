@@ -1,0 +1,260 @@
+/* General Styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Playfair Display', serif;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    scroll-behavior: smooth;
+}
+
+/* Top Bar Styling */
+.top-bar {
+    background-color: #2d6788; /* Dark blue background */
+    text-align: center; /* Center-align the text */
+    padding: 5px 0; /* Adjusted padding */
+    font-size: 0.8rem; /* Smaller font size */
+    line-height: 1; /* Tight line spacing */
+    width: 100%; /* Full width */
+    position: fixed; /* Sticks at the top */
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    height: 30px; /* Fixed height */
+}
+
+.top-bar-link {
+    color: #faf5ea; /* White text */
+    text-decoration: none; /* Remove underline */
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 30px; /* Vertically center-align text */
+}
+
+.top-bar-link:hover {
+    text-decoration: underline;
+    color: #dddddd; /* Lighter hover effect */
+}
+.logo-link {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit the current text color */
+    display: inline-block; /* Ensure the link surrounds the content */
+}
+/* Header Styling */
+header {
+    position: fixed;
+    top: 30px; /* Offset for top bar */
+    z-index: 90;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #faf5ea;
+    color: #2d6788;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.header-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 0;
+    margin: 0;
+}
+
+header h1 {
+    display: inline-flex;
+    align-items: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    margin: 0;
+}
+
+header h1 .icon {
+    width: 30px;
+    height: auto;
+    margin-left: 10px;
+}
+
+header p {
+    margin: 0;
+    padding-top: 5px;
+    font-size: 1.2rem;
+    line-height: 1.2;
+    color: #2d6788;
+}
+
+/* Navigation Styling */
+header nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #2d6788;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #01273d;
+}
+
+/* Book a Therapist Button */
+.btn-book {
+    padding: 10px 20px;
+    background-color: #2d6788;
+    color: #faf5ea;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-right: 25px;
+}
+
+.btn-book:hover {
+    background-color: #48669a;
+    transform: scale(1.05);
+}
+
+
+
+
+
+
+
+/* Banner Section Styling */
+.banner {
+    margin-top: 80px;
+    width: 100%; /* Full width */
+    height: 280px; /* Adjust as needed for height */
+    display: flex; /* Flexbox for centering content */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    text-align: center; /* Center text */
+
+    /* Background image properties */
+    background-image: url('../images/banner.png'); /* Replace with the path to your image */
+    background-size: cover; /* Make sure the image covers the entire banner */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+
+    color: #fff; /* Text color for contrast (change to suit your image) */
+    font-family: 'Dancing Script', cursive; /* Match the font style */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+}
+
+/* Banner Content Styling */
+.banner-content h1 {
+    font-size: 5rem; /* Large font size for the title */
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional: Add text shadow for readability */
+}
+
+.banner-content p {
+    font-size: 1.2rem; /* Large font size for the title */
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional: Add text shadow for readability */
+}
+
+
+
+
+
+
+
+
+
+
+
+/* FAQ Section Container */
+.faq-container {
+    display: flex; /* Flexbox for centering */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center content horizontally */
+    padding: 50px; /* Add spacing around the section */
+    background-color: #faf5ea; /* Light background color for contrast */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* FAQ Content Section */
+#faq {
+    max-width: 800px; /* Limit the width of the FAQ content */
+    width: 100%; /* Full width up to max-width */
+    text-align: left; /* Left-align text */
+    font-family: 'Playfair Display', serif; /* Consistent font style */
+    color: #2d6788; /* Match branding color */
+}
+
+#faq h2 {
+    font-size: 2rem; /* Larger font for the heading */
+    margin-bottom: 30px; /* Space below the heading */
+}
+
+.faq-item {
+    margin-bottom: 20px; /* Space between FAQ items */
+}
+
+.faq-question {
+    width: 100%; /* Full width */
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: left; /* Align text to the left */
+    background-color: #faf5ea; /* Button background color */
+    color: #2d6788; /* Text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border-bottom: 1px solid #024477; /* Line between questions */
+    box-sizing: border-box; /* Include padding and border in width calculation */
+    margin-bottom: 5px; /* Space between the question button and answer */
+}
+
+.faq-question:hover {
+    background-color: #dfe7ed; /* Background color change on hover */
+}
+
+.faq-answer {
+    display: none; /* Hide answers by default */
+    padding: 10px 15px; /* Padding for the answer text */
+    background-color: #f9f9f9; /* Background for answers */
+    border: 1px solid #dfe7ed; /* Border around answers */
+    border-radius: 5px; /* Rounded corners for the answer box */
+    margin-top: 5px; /* Space above answer */
+    text-align: left; /* Align answers to the left */
+}
+
+/* Responsive Adjustments for FAQ Section */
+@media (max-width: 768px) {
+    .faq-container {
+        padding: 20px; /* Reduce padding for smaller screens */
+    }
+
+    #faq {
+        max-width: 100%; /* Full width for FAQ section */
+        margin-bottom: 20px; /* Add spacing below the content */
+    }
+}
+
+/* Footer Styling */
+footer {
+    text-align: center; /* Center-align text */
+    padding: 20px; /* Padding for footer content */
+    background-color: #2d6788; /* Background color */
+    color: #faf5ea; /* Text color */
+}

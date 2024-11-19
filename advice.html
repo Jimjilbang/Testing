@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ pageTitle }}</title> <!-- Replace dynamically -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <a href="https://example.com/start" class="top-bar-link">
+            Most insured members enjoy $0 copay. Start feeling better today
+        </a>
+    </div>
+
+    <!-- Header Section -->
+    <header>
+        <div class="header-left">
+            <a href="index.html" class="logo-link">
+                <h1>Flow Psychotherapy Clinic <img src="images/icon.jpg.webp" alt="Icon" class="icon"></h1>
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="advice.html">Advice</a></li>
+                <li><a href="faqs.html">FAQs</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="blog.html">Login</a></li>
+            </ul>
+            <a href="book-a-therapist.html" class="btn-book">Book a Therapist</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        {{ pageContent }}
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Flow Psychotherapy</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
