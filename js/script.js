@@ -120,6 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     hamburger.addEventListener('click', function () {
         navbar.classList.toggle('active');
+        navbar.classList.toggle('hidden');
     });
 
 
