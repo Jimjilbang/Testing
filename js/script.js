@@ -80,6 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    emailjs.init("Yc8u0fkIdSiqmWEbIY"); // Replace with your actual Public Key from EmailJS
     // Contact form submission using EmailJS
     const sendButton = document.getElementById('send-button');
     if (sendButton) {
@@ -87,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
             event.preventDefault(); // Prevent default form submission
 
             // Initialize EmailJS with your Public Key before sending
-            emailjs.init("c8u0fkIdSiqmWEbIY"); // Replace with your actual Public Key from EmailJS
+            emailjs.init("Yc8u0fkIdSiqmWEbIY"); // Replace with your actual Public Key from EmailJS
 
             // Define the EmailJS service and template IDs
             const serviceID = 'service_z35tdht'; // Replace with your actual Service ID
@@ -109,5 +110,51 @@ document.addEventListener("DOMContentLoaded", function () {
                     alert("Failed to send message: " + JSON.stringify(error)); // Error message
                 });
         });
+    
     }
+
+
+
+    const hamburger = document.getElementById('hamburger');
+    const navbar = document.getElementById('navbar');
+
+    hamburger.addEventListener('click', function () {
+        navbar.classList.toggle('active');
+    });
+
+
+
+
 });
+
+function toggleDropdown(element) {
+    // Get all service details sections
+    const allServiceDetails = document.querySelectorAll('.service-details');
+    const allToggleSigns = document.querySelectorAll('.toggle-sign');
+
+    // Loop through all service details and close them, except the current one
+    allServiceDetails.forEach((serviceDetails) => {
+        if (serviceDetails !== element.nextElementSibling) {
+            serviceDetails.style.display = 'none'; // Hide other sections
+        }
+    });
+
+    // Loop through all toggle signs and reset to '+', except the current one
+    allToggleSigns.forEach((toggleSign) => {
+        if (toggleSign !== element.querySelector('.toggle-sign')) {
+            toggleSign.textContent = '+'; // Reset other toggle signs to '+'
+        }
+    });
+
+    // Toggle the clicked section
+    const serviceDetails = element.nextElementSibling;
+    const toggleSign = element.querySelector('.toggle-sign');
+
+    if (serviceDetails.style.display === 'block') {
+        serviceDetails.style.display = 'none';
+        toggleSign.textContent = '+';
+    } else {
+        serviceDetails.style.display = 'block';
+        toggleSign.textContent = '-';
+    }
+}
