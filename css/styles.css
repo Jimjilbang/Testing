@@ -151,6 +151,59 @@ header nav ul li a:hover {
     color: #01273d;
 }
 
+
+
+@media (max-width: 768px) {
+    /* Hamburger icon should be visible on smaller screens */
+    .hamburger {
+        display: block;
+    }
+
+    /* Hide navigation by default for mobile */
+    header nav {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background-color: #f5f5f5;
+        padding: 20px;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        width: calc(100% - 20px);
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Make navigation visible when active (after clicking hamburger) */
+    #navbar.active {
+        display: flex;
+    }
+
+    /* Vertical Navigation for Mobile */
+    header nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    header nav ul li {
+        width: 100%;
+    }
+
+    header nav ul li a {
+        width: 100%;
+        padding: 10px 0;
+    }
+}
+
+
+
+
+
+
+
+
+
 /* Book a Therapist Button */
 .btn-book {
     padding: 10px 20px;
@@ -703,12 +756,8 @@ header nav ul li a:hover {
 
 
 
-
-
-
-
-/* Container for FAQ and Form Side-by-Side */
 /* FAQ Form Container */
+/* Container for FAQ and Form Side-by-Side */
 .faq-form-container {
     display: flex; /* Flexbox for side-by-side layout */
     justify-content: space-between; /* Space out the sections */
@@ -717,94 +766,115 @@ header nav ul li a:hover {
     background-color: #faf5ea;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 90px;
     gap: 50px; /* Gap between the FAQ and form sections */
 }
 
-/* FAQ Section Styling (Left Half) HOW TO GET STARTED */
+/* FAQ Section Styling (Left Half) */
 .left-half {
     flex: 1; /* Take half of the space */
     max-width: 50%; /* Ensure it stays within half of the page */
-    text-align: left;
+    padding-left: 200px;
     font-family: 'Playfair Display', serif;
     color: #2d6788;
-    padding-left: 50px;
-    padding-right: 50px;
+    margin: 0 auto; /* Center content within the left half */
+    text-align: center; /* Center text */
 }
 
+/* Title Styling (h2) */
 .left-half h2 {
     font-size: 2rem;
     margin-bottom: 30px;
+    text-align: center; /* Center the h2 text */
 }
 
 /* Service Item */
 .service-item {
-    margin-bottom: 0; /* Remove bottom margin to prevent extra space between items */
+    margin-bottom: 20px; /* Add some bottom margin for spacing */
 }
 
-/* Service Header HOW TO GET STARTED NEW CLIENTS */
+/* Service Header Styling */
 .service-header {
-    width: 75%;
+    width: 85%; /* Set specific width for stability */
     color: #2d6788;
     font-size: 1.2rem;
     font-weight: bold;
-    padding: 15px 0; /* Remove padding from sides to reduce space */
+    padding: 15px 20px; /* Use consistent padding */
     cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    text-align: left; /* Align text to the left */
+    position: relative; /* To position the '+' at the end */
     transition: background-color 0.3s ease;
     border-bottom: 1px solid #2d6788; /* Single line below the question */
+    margin: 0 auto 15px auto; /* Center the element within the container and add spacing below */
 }
-
-
 
 /* Service Header Hover Effect */
 .service-header:hover {
     background-color: #dfe7ed; /* Change background on hover */
 }
 
+/* Toggle Sign Styling */
 .toggle-sign {
     font-size: 1.5rem;
-    margin-left: 10px;
+    position: absolute;
+    right: 20px; /* Align the '+' symbol to the right edge of the service header */
+    top: 50%;
+    transform: translateY(-50%); /* Vertically center the '+' symbol */
 }
 
-/* Service Details HOW TO GET STARTED DETAILS*/
+
+/* Service Details Styling */
 .service-details {
-    width: 75%;
+    width: 85%; /* Set specific width for stability */
     display: none; /* Initially hidden */
-    padding: 15px 0;
+    padding: 15px 20px;
     background-color: #f9f9f9;
     color: #2d6788;
-    text-align: center;
+    text-align: center; /* Center the text */
+    margin: 0 auto; /* Center the element within the container */
+    margin-bottom: 20px; /* Space below the service details */
 }
 
 
+
+
+
+
+
+
+/* Form Section Styling (Right Half) */
 /* Form Section Styling (Right Half) */
 .right-half {
     flex: 1; /* Take half of the space */
     max-width: 50%; /* Ensure it stays within half of the page */
-    text-align: left;
-    padding-right: 50px;
+    display: flex; /* Use Flexbox to align elements */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center elements horizontally */
+    margin: 0;
+    padding-right: 200px;
+    text-align: center; /* Center text within the container */
 }
 
 .right-half h2 {
     font-size: 2rem;
     margin-bottom: 20px;
     color: #2d6788;
-    
+    text-align: center; /* Center the h2 text */
 }
 
 #contact-form {
-    width: 75%;
+    width: 100%; /* Take full width of the parent container */
+    max-width: 80%; /* Limit the width for better centering */
     display: flex;
     flex-direction: column;
     gap: 15px;
+    align-items: center; /* Center items inside the form */
 }
 
 #contact-form label {
     font-weight: bold;
     color: #2d6788;
+    text-align: left; /* Labels can still be aligned to the left */
+    width: 100%;
 }
 
 #contact-form input,
@@ -820,18 +890,21 @@ header nav ul li a:hover {
     padding: 10px 20px;
     background-color: #2d6788;
     color: #faf5ea;
-    text-align: center;
+    text-align: center; /* Keep the text inside the button centered */
     font-weight: bold;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
+    align-self: flex-start; /* Align the button to the left side */
+    margin-top: 10px; /* Optional: Add a small margin to create spacing above the button */
 }
 
 #contact-form button:hover {
     background-color: #48669a;
     transform: scale(1.05);
 }
+
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
