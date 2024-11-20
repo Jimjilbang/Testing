@@ -151,17 +151,37 @@ header nav ul li a:hover {
     color: #01273d;
 }
 
+/* General Styling for Hamburger */
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #2d6788;
+    margin-right: 20px;
+}
 
+/* Navigation for Desktop */
+header nav {
+    display: flex; /* Visible for desktop view */
+    align-items: center;
+    gap: 20px;
+}
 
+/* Hidden Class */
+.hidden {
+    display: none; /* Hide navigation by default */
+}
+
+/* Mobile Styles */
 @media (max-width: 768px) {
-    /* Hamburger icon should be visible on smaller screens */
+    /* Show hamburger icon on mobile screens */
     .hamburger {
         display: block;
     }
 
-    /* Hide navigation by default for mobile */
+    /* Hide navigation by default on mobile */
     header nav {
-        display: none;
+        display: none; /* Hide initially */
         flex-direction: column;
         gap: 10px;
         background-color: #f5f5f5;
@@ -174,12 +194,12 @@ header nav ul li a:hover {
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
-    /* Make navigation visible when active (after clicking hamburger) */
+    /* Show navigation when 'active' class is added */
     #navbar.active {
         display: flex;
     }
 
-    /* Vertical Navigation for Mobile */
+    /* Stack menu items vertically for mobile */
     header nav ul {
         flex-direction: column;
         align-items: flex-start;
@@ -195,6 +215,7 @@ header nav ul li a:hover {
         padding: 10px 0;
     }
 }
+
 
 
 
