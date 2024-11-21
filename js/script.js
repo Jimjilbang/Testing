@@ -84,33 +84,51 @@ document.addEventListener("DOMContentLoaded", function () {
 
     emailjs.init("c8u0fkIdSiqmWEbIY"); // Replace with your actual Public Key from EmailJS
     // Contact form submission using EmailJS
+    // Initialize EmailJS
+    emailjs.init("c8u0fkIdSiqmWEbIY"); // Replace with your actual Public Key from EmailJS
+
+    // Function to send email using EmailJS
+    function sendEmail() {
+        const serviceID = 'service_z35tdht'; // Replace with your actual Service ID
+        const templateID = 'template_p2h4p4l'; // Replace with your actual Template ID
+
+        const params = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            message: document.getElementById("message").value
+        };
+
+        // Validate form inputs
+        if (!params.name || !params.email || !params.message) {
+            alert("Please fill in all fields before sending the message.");
+            return;
+        }
+
+        const sendButton = document.getElementById('send-button');
+        sendButton.disabled = true; // Disable button to prevent multiple clicks
+        sendButton.innerText = "Sending...";
+
+        emailjs.send(serviceID, templateID, params)
+            .then(response => {
+                alert("Message sent successfully!");
+                document.getElementById("contact-form").reset(); // Reset form fields
+                sendButton.disabled = false; // Re-enable button
+                sendButton.innerText = "Send Message";
+            })
+            .catch(error => {
+                alert("Failed to send message: " + JSON.stringify(error));
+                sendButton.disabled = false; // Re-enable button
+                sendButton.innerText = "Send Message";
+            });
+    }
+
+    // Attach event listener to button
     const sendButton = document.getElementById('send-button');
     if (sendButton) {
         sendButton.addEventListener('click', function (event) {
             event.preventDefault(); // Prevent default form submission
-
-
-            // Define the EmailJS service and template IDs
-            const serviceID = 'service_z35tdht'; // Replace with your actual Service ID
-            const templateID = 'template_p2h4p4l'; // Replace with your actual Template ID
-
-            // Define the parameters to pass to EmailJS
-            const params = {
-                name: document.getElementById("name").value,
-                email: document.getElementById("email").value,
-                message: document.getElementById("message").value
-            };
-
-            // Send the email using EmailJS
-            emailjs.send(serviceID, templateID, params)
-                .then(function (response) {
-                    alert("Message sent successfully!"); // Success message
-                    document.getElementById("contact-form").reset(); // Clear the form
-                }, function (error) {
-                    alert("Failed to send message: " + JSON.stringify(error)); // Error message
-                });
+            sendEmail(); // Call the function to send the email
         });
-    
     }
 
 
