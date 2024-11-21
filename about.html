@@ -5,36 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ pageTitle }}</title> <!-- Replace dynamically -->
     <link rel="stylesheet" href="css/aboutstyles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Top Bar -->
     <div class="top-bar">
-        <a href="https://example.com/start" class="top-bar-link">
+        <a href="https://example.com/start" class="top-bar-link hidden">
             Most insured members enjoy $0 copay. Start feeling better today
         </a>
     </div>
 
     <!-- Header Section -->
+
     <header>
-        <div class="header-left">
+        <div class="header-left hidden">
             <a href="index.html" class="logo-link">
                 <h1>Flow Psychotherapy Clinic <img src="images/icon.jpg.webp" alt="Icon" class="icon"></h1>
             </a>
         </div>
-        <nav>
+        <div class="hamburger hidden" id="hamburger">
+            &#9776; <!-- Hamburger Icon -->
+        </div>
+        <nav id="navbar" class="hidden visible">
             <ul>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="advice.html">Advice</a></li>
                 <li><a href="faqs.html">FAQs</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="blog.html">Blog</a></li>
-                <li><a href="blog.html">Login</a></li>
+                <li><a href="login.html">Login</a></li>
             </ul>
             <a href="book-a-therapist.html" class="btn-book">Book a Therapist</a>
         </nav>
     </header>
+
+
 
     <!-- Main Content -->
     <main>
@@ -95,6 +102,74 @@
 
                 </p>
             </div>
+
+
+
+            
+        </section>
+
+
+        <section class="faq-form-container">
+            <!-- FAQ Section on the Left -->
+            <div id="faq" class="left-half">
+                <h2>How to Get Started</h2>
+                
+                <div id="services">
+                    <div class="service-item">
+                        <div class="service-header" onclick="toggleDropdown(this)">
+                            <span>New Clients</span>
+                            <span class="toggle-sign">+</span>
+                        </div>
+                        <div class="service-details">
+                            <p>Schedule your free 15-minute consultation here.</p>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-header" onclick="toggleDropdown(this)">
+                            <span>Returning Clients</span>
+                            <span class="toggle-sign">+</span>
+                        </div>
+                        <div class="service-details">
+                            <p>Book here.</p>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-header" onclick="toggleDropdown(this)">
+                            <span>Immediate Support</span>
+                            <span class="toggle-sign">+</span>
+                        </div>
+                        <div class="service-details">
+                            <p>For Emergencies: Call/Text 9-8-8: Suicide Crisis Hotline.</p>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-header" onclick="toggleDropdown(this)">
+                            <span>Psychotherapy for Teens</span>
+                            <span class="toggle-sign">+</span>
+                        </div>
+                        <div class="service-details">
+                            <p>Our sessions incorporate art and play to help children express and make sense of their emotions. In a supportive and engaging environment, young ones can explore their feelings naturally and develop healthy coping skills.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Form Section on the Right -->
+            <div class="right-half">
+                <h2>Contact Us</h2>
+                <form id="contact-form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                    
+                    <button type="button" id="send-button">Send Message</button>
+                </form>
+            </div>
         </section>
           <!-- add approach -->
 
@@ -112,6 +187,6 @@
         <p>&copy; 2024 Flow Psychotherapy</p>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="js/template.js"></script>
 </body>
 </html>
