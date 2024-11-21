@@ -2,12 +2,67 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Flow Psychotherapy Clinic offers therapy for individuals, couples, and children in Toronto, GTA, and North York. Accepts insurance coverage with free consultation. Start your journey to better mental health today.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flow Psychotherapy</title>
+    <title>Flow Psychotherapy | Insurance Coverage Accepted & Free Consultation | Therapy in Toronto, GTA and North York</title>
+
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": "Flow Psychotherapy Clinic",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Unit 2, 150 Duncan Mill Road",
+            "addressLocality": "North York",
+            "addressRegion": "ON",
+            "postalCode": "M3B 3M4"
+          },
+          "telephone": "705-500-5826",
+          "email": "Flowwithwan@gmail.com",
+          "url": "https://example.com",
+          "priceRange": "$$",
+          "openingHours": "Mo-Fr 09:00-17:00",
+          "image": "path-to-logo.png",
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "43.768411",
+            "longitude": "-79.344119"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Therapy Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Individual Therapy"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Couples Therapy"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Child Therapy"
+                }
+              }
+            ]
+          }
+        }
+        </script>
+        
 </head>
 <body>
     <!-- Top Bar -->
@@ -49,10 +104,10 @@
 
             <section id="surface">
                 <h1 class="hidden flow-title">FLOW</h1>
+                <h1 class="hidden flow-subtitle">Psychotherapy Clinic</h1>
                 <div class="hidden surface-content">
-                    <h2>Psychotherapy Clinic</h2>
-                    <p>Therapy for individuals, couples, and families ready to feel and live better</p>
-                    <p>Therapists in Toronto, the Greater Toronto Area (GTA), and beyond</p>
+                    <p class="hide-on-mobile">Therapy for individuals, couples, and families ready to feel and live better</p>
+                    <p class="hide-on-mobile">Therapists in Toronto, the Greater Toronto Area (GTA), and beyond</p>
                     <p class="spaced">What type of Psychotherapy are you looking for?</p>
                     <div class="therapy-links">
                         <a href="individual-therapy.html" class="therapy-link">
@@ -128,6 +183,22 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="approach-container">
+                        <h2>Our Approach To Therapy</h2>
+                        <p>
+                            Our approach is grounded in practical, results-driven techniques paired with a deep sense of empathy and understanding. We don’t just focus on surface-level solutions; we work with you to get to the root of the challenges you’re facing, whether that’s stress, anxiety, relationship issues, or the pressures of Silicon Valley life.
+                        </p>
+                        <p>
+                            Our team offers a safe, non-judgmental, and culturally inclusive space where you can feel heard and supported. We use a three-step approach to help you move forward: First, we get to know you and understand what’s been weighing you down; Second, we create a personalized plan that fits your unique needs; and third, we work with you to take action and make real, lasting changes in your life.
+                        </p>
+                        <p>
+                            Our mission is to bridge the gap between where you are and where you want to be, giving you the tools to navigate life’s challenges with confidence and clarity.
+                        </p>
+                    </div>
+
+
+
                     <div class="AreaOfFocus-box">
                         <h2>Areas of Focus</h2>
                         <!-- First Row of Icons -->
@@ -267,7 +338,33 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Flow Psychotherapy</p>
+        <div class="footer-container">
+            <!-- Left Section -->
+            <div class="footer-left">
+                <h2>Flow Psychotherapy Clinic</h2>
+                <img src="path-to-logo.png" alt="Flow Psychotherapy Logo" class="footer-logo">
+                
+            </div>
+    
+            <!-- Middle Section -->
+            <div class="footer-middle">
+                <h3>Contact Us</h3>
+                <p>705-500-5826</p>
+                <p><a href="mailto:Flowwithwan@gmail.com">Flowwithwan@gmail.com</a></p>
+            </div>
+    
+            <!-- Right Section -->
+            <div class="footer-right">
+                <h3>Visit Us</h3>
+                <p>Unit 2, 150 Duncan Mill Road</p>
+                <p>North York, ON M3B 3M4</p>
+            </div>
+        </div>
+    
+        <!-- Copyright Section -->
+        <div class="footer-copyright">
+            <p>&copy; 2024 Flow Psychotherapy</p>
+        </div>
     </footer>
 
 </body>
