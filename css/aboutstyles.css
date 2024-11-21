@@ -660,10 +660,87 @@ nav.active {
 
 
 
-/* Footer Styling */
+/* Footer Container */
 footer {
-    text-align: center;
-    padding: 20px;
     background-color: #2d6788;
     color: #faf5ea;
+    padding: 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items to the top */
+    gap: 20px;
+    padding: 20px;
+    max-width: 80%;
+    margin: 0 auto; /* Center the footer container */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+/* Left Section */
+.footer-left {
+    display: flex; /* Align logo and text horizontally */
+    align-items: center; /* Vertically align logo with text */
+    flex: 1; /* Make the left section take up more space */
+    gap: 10px; /* Add spacing between logo and text */
+}
+
+.footer-left img.footer-logo {
+    max-width: 50px; /* Adjust logo size */
+    height: auto;
+}
+
+.footer-left h2 {
+    font-size: 1.5rem; /* Slightly larger text */
+    margin: 0; /* Remove default margins */
+}
+
+/* Middle Section */
+.footer-middle {
+    flex: 0.7; /* Adjust width to balance spacing */
+    margin-right: 50px; /* Increase spacing from the left section */
+}
+
+.footer-middle h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.footer-middle p {
+    margin: 5px 0;
+}
+
+/* Link Styling for Email */
+.footer-middle a {
+    color: #faf5ea;
+    text-decoration: none;
+}
+
+.footer-middle a:hover {
+    text-decoration: underline;
+}
+
+/* Right Section */
+.footer-right {
+    flex: 0.5; /* Reduce width slightly to bring it closer to the middle section */
+}
+
+.footer-right h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.footer-right p {
+    margin: 5px 0;
+    line-height: 1.5; /* Adjust spacing for readability */
+}
+
+/* Copyright Section */
+.footer-copyright {
+    text-align: center;
+    border-top: 1px solid #faf5ea;
+    margin-top: 20px;
+    padding-top: 10px;
+    font-size: 0.9rem;
 }
