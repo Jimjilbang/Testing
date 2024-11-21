@@ -80,15 +80,15 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    emailjs.init("Yc8u0fkIdSiqmWEbIY"); // Replace with your actual Public Key from EmailJS
+
+
+    emailjs.init("c8u0fkIdSiqmWEbIY"); // Replace with your actual Public Key from EmailJS
     // Contact form submission using EmailJS
     const sendButton = document.getElementById('send-button');
     if (sendButton) {
         sendButton.addEventListener('click', function (event) {
             event.preventDefault(); // Prevent default form submission
 
-            // Initialize EmailJS with your Public Key before sending
-            emailjs.init("Yc8u0fkIdSiqmWEbIY"); // Replace with your actual Public Key from EmailJS
 
             // Define the EmailJS service and template IDs
             const serviceID = 'service_z35tdht'; // Replace with your actual Service ID
@@ -117,10 +117,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const hamburger = document.getElementById('hamburger');
     const navbar = document.getElementById('navbar');
-
+    
+    // Toggle the active class on the navbar when the hamburger is clicked
     hamburger.addEventListener('click', function () {
-        navbar.classList.toggle('active');
-        navbar.classList.toggle('hidden');
+        navbar.classList.toggle('active'); // Toggle the active class
     });
 
 
