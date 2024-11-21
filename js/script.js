@@ -83,9 +83,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     emailjs.init("c8u0fkIdSiqmWEbIY"); // Replace with your actual Public Key from EmailJS
-    // Contact form submission using EmailJS
-    // Initialize EmailJS
-    emailjs.init("c8u0fkIdSiqmWEbIY"); // Replace with your actual Public Key from EmailJS
 
     // Function to send email using EmailJS
     function sendEmail() {
