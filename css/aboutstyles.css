@@ -7,6 +7,45 @@ body, html {
     scroll-behavior: smooth;
 }
 
+
+
+
+
+@keyframes appearScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Hidden State */
+.hidden {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.8s ease-out;
+}
+
+/* Visible State */
+.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Add Specific Animation Delays */
+.flow-title.visible {
+    animation-delay: 0s; /* FLOW appears first */
+}
+
+.surface-content.visible {
+    animation-delay: 2s; /* All other content appears after 1 second */
+}
+
+
+
 /* Top Bar Styling */
 .top-bar {
     background-color: #2d6788; /* Dark blue background */
@@ -111,6 +150,86 @@ header nav ul li a:hover {
     color: #01273d;
 }
 
+
+nav.active {
+    display: flex;
+}
+
+
+.hamburger {
+    display: none; /* Hidden by default for larger screens */
+    position: absolute;
+    top: 10px; /* Adjust for proper vertical placement */
+    right: 50px; /* Align to the right */
+    font-size: 2rem;
+    cursor: pointer;
+    color: #2d6788;
+    z-index: 200; /* Ensure it's above other elements */
+}
+
+
+
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; /* Show hamburger */
+    }
+
+    header nav {
+        display: none; /* Hidden by default */
+        flex-direction: column;
+        gap: 10px;
+        background-color: #faf5ea; /* Background for dropdown */
+        padding: 20px; /* Add padding inside the menu */
+        position: absolute;
+        top: 60px;
+        right: 0; /* Align with the right edge */
+        left: 0; /* Align with the left edge to fit fully inside the viewport */
+        width: auto; /* Automatically adjust to browser width */
+        border-radius: 10px; /* Optional rounded edges */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        overflow-x: hidden; /* Prevent horizontal overflow */
+    }
+    /* Show the nav when active */
+    nav.active {
+        display: flex;
+    }
+
+    /* Style nav links for mobile */
+    header nav ul {
+        flex-direction: column;
+        align-items: flex-end;
+        width: 85%;
+    }
+
+    header nav ul li a {
+        width: 100%;
+        padding: 10px 0;
+        font-size: 1.2rem;
+    }
+
+    .btn-book {
+        margin-top: 10px;
+        padding: 10px 15px;
+        background-color: #2d6788;
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        width: 40%; /* Set the width */
+        display: block; /* Make it block-level for alignment */
+        margin-left: auto; /* Push the button to the right */
+        margin-right: 0; /* Ensure no extra margin on the right */
+    }
+    
+}
+
+
+
+
+
+
+
 /* Book a Therapist Button */
 .btn-book {
     padding: 10px 20px;
@@ -128,6 +247,70 @@ header nav ul li a:hover {
     background-color: #48669a;
     transform: scale(1.05);
 }
+
+/* Background Container */
+#background-container {
+    background-image: url('../images/background_r.png');
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll; /* Allow scrolling */
+
+}
+
+
+
+
+
+/* Responsive Design with Media Queries */
+@media (max-width: 768px) {
+    body {
+        font-size: 0.9rem; /* Slightly smaller text on mobile */
+    }
+
+    .top-bar {
+        font-size: 0.7rem;
+        padding: 3px 0;
+        height: 25px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+
+    header h1 {
+        font-size: 1.8rem; /* Slightly smaller title */
+    }
+
+
+    #background-container {
+        background-size: auto 100%; /* Scale background image for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem; /* Further reduce font size */
+    }
+
+    header nav ul {
+        gap: 5px; /* Reduce gap further */
+    }
+
+    .btn-book {
+        font-size: 0.9rem; /* Smaller button text */
+    }
+}
+
+
+
+
+
+
+
+
 /* Banner Section Styling */
 .banner {
     margin-top: 100px;
@@ -241,6 +424,241 @@ header nav ul li a:hover {
         max-width: 100%; /* Ensure image scales down */
     }
 }
+
+
+
+
+
+
+
+/* FAQ Form Container */
+/* Container for FAQ and Form Side-by-Side */
+.faq-form-container {
+    display: flex; /* Flexbox for side-by-side layout */
+    justify-content: space-between; /* Space out the sections */
+    align-items: center; /* Align items at the top */
+    padding: 50px;
+    background-color: #faf5ea;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    gap: 50px; /* Gap between the FAQ and form sections */
+}
+
+/* FAQ Section Styling (Left Half) */
+.left-half {
+    flex: 1; /* Allow it to take up space */
+    max-width: 50%; /* Limit it to half the width */
+    justify-content: flex-end; /* Align this container to the bottom (end) */
+    font-family: 'Playfair Display', serif;
+    color: #2d6788;
+    padding-right: 0;
+    text-align: center; /* Center text */
+}
+
+/* Title Styling (h2) */
+.left-half h2 {
+    width: 70%; /* Set specific width for stability */
+    font-size: 2rem;
+    margin: 0 0 15px auto; /* Align the element to the right */
+    margin-bottom: 30px;
+    text-align: center; /* Center the h2 text */
+}
+
+/* Service Item */
+.service-item {
+    margin-bottom: 20px; /* Add some bottom margin for spacing */
+    
+}
+
+/* Service Header Styling */
+.service-header {
+    width: 70%; /* Set specific width for stability */
+    color: #2d6788;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 15px 20px; /* Use consistent padding */
+    cursor: pointer;
+    text-align: center; /* Center the text */
+    position: relative; /* To position the '+' at the end */
+    transition: background-color 0.3s ease;
+    border-bottom: 1px solid #2d6788; /* Single line below the question */
+    margin: 0 0 15px auto; /* Align the element to the right */
+}
+
+/* Service Header Hover Effect */
+.service-header:hover {
+    background-color: #dfe7ed; /* Change background on hover */
+}
+
+/* Toggle Sign Styling */
+.toggle-sign {
+    font-size: 1.5rem;
+    position: absolute;
+    right: 20px; /* Align the '+' symbol to the right edge of the service header */
+    top: 50%;
+    transform: translateY(-50%); /* Vertically center the '+' symbol */
+}
+
+
+/* Service Details Styling */
+.service-details {
+    width: 70%; /* Set specific width for stability */
+    display: none; /* Initially hidden */
+    padding: 15px 20px;
+    background-color: #f9f9f9;
+    color: #2d6788;
+    text-align: center; /* Center the text */
+    margin: 0 0 15px auto; /* Align the element to the right */
+    margin-bottom: 20px; /* Space below the service details */
+}
+.faq-message {
+    font-size: 0.9rem; /* Adjust the font size */
+    font-weight: bold; /* Make it bold for emphasis */
+    color: #2d6788; /* Match your theme's color */
+    margin-top: 35px; /* Add spacing above the text */
+    text-align: right; /* Center-align the text */
+}
+
+@media (max-width: 768px) {
+    .faq-message {
+        display: none; /* Hide the message on screens smaller than 768px */
+    }
+}
+
+
+
+
+
+/* Form Section Styling (Right Half) */
+/* Form Section Styling (Right Half) */
+.right-half {
+    flex: 1; /* Take half of the space */
+    max-width: 50%; /* Ensure it stays within half of the page */
+    display: flex; /* Use Flexbox to align elements */
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: flex-start;
+    margin: 0;
+    text-align: center; /* Center text within the container */
+}
+
+.right-half h2 {
+    max-width: 70%; /* Limit the width for better centering */
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #2d6788;
+    text-align: center; /* Center the h2 text */
+}
+
+#contact-form {
+
+    max-width: 70%; /* Limit the width for better centering */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center; /* Center items inside the form */
+}
+
+#contact-form label {
+    font-weight: bold;
+    color: #2d6788;
+    text-align: left; /* Labels can still be aligned to the left */
+    width: 100%;
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #2d6788;
+    border-radius: 5px;
+    font-family: 'Playfair Display', serif;
+}
+
+#contact-form button {
+    padding: 10px 20px;
+    background-color: #2d6788;
+    color: #faf5ea;
+    text-align: center; /* Keep the text inside the button centered */
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    align-self: flex-start; /* Align the button to the left side */
+    margin-top: 10px; /* Optional: Add a small margin to create spacing above the button */
+}
+
+#contact-form button:hover {
+    background-color: #48669a;
+    transform: scale(1.05);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .faq-form-container {
+        flex-direction: column; /* Stack FAQ and form vertically on smaller screens */
+        align-items: center; /* Center align both sections */
+        gap: 20px; /* Adjust spacing between stacked sections */
+    }
+
+    .left-half,
+    .right-half {
+        margin: 0;
+        max-width: 100%;
+        width: 100%; /* Take up 70% of the parent container width */
+        flex: none; /* Disable equal space sharing for stacked layout */
+    }
+
+    .left-half h2,
+    .right-half h2 {
+        margin: 0;
+        max-width: 100%;
+        width: 100%; /* Ensure the headings take up full width of their containers */
+        text-align: center; /* Center-align the text */
+        margin-bottom: 20px; /* Add spacing below the headings */
+    }
+
+    .service-header, .service-details {
+        width: 100%; /* Full width for FAQ service headers */
+    }
+    #contact-form {
+        max-width: 100%;
+        width: 100%;
+    }
+    
+
+    
+}
+
+
+
+
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .faq-container {
+        padding: 20px;
+    }
+
+    #faq {
+        max-width: 100%;
+    }
+}
+
+
+
+
 
 /* Footer Styling */
 footer {
