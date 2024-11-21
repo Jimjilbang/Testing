@@ -151,73 +151,78 @@ header nav ul li a:hover {
     color: #01273d;
 }
 
-/* General Styling for Hamburger */
+
+
+
+
+
 .hamburger {
-    display: none;
+    display: none; /* Hidden by default for larger screens */
+    position: absolute;
+    top: 10px; /* Adjust for proper vertical placement */
+    right: 50px; /* Align to the right */
     font-size: 2rem;
     cursor: pointer;
     color: #2d6788;
-    margin-right: 20px;
+    z-index: 200; /* Ensure it's above other elements */
 }
 
-/* Navigation for Desktop */
-header nav {
-    display: flex; /* Visible for desktop view */
-    align-items: center;
-    gap: 20px;
-}
 
-/* Hidden Class */
-.hidden {
-    display: none; /* Hide navigation by default */
-}
 
-/* Mobile Styles */
+
 @media (max-width: 768px) {
-    /* Show hamburger icon on mobile screens */
     .hamburger {
-        display: block;
+        display: block; /* Show hamburger */
     }
 
-    /* Hide navigation by default on mobile */
     header nav {
-        display: none; /* Hide initially */
+        display: none; /* Hidden by default */
         flex-direction: column;
         gap: 10px;
-        background-color: #f5f5f5;
-        padding: 20px;
+        background-color: #faf5ea; /* Background for dropdown */
+        padding: 20px; /* Add padding inside the menu */
         position: absolute;
         top: 60px;
-        right: 10px;
-        width: calc(100% - 20px);
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        right: 0; /* Align with the right edge */
+        left: 0; /* Align with the left edge to fit fully inside the viewport */
+        width: auto; /* Automatically adjust to browser width */
+        border-radius: 10px; /* Optional rounded edges */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        overflow-x: hidden; /* Prevent horizontal overflow */
     }
-
-    /* Show navigation when 'active' class is added */
-    #navbar.active {
+    /* Show the nav when active */
+    nav.active {
         display: flex;
     }
 
-    /* Stack menu items vertically for mobile */
+    /* Style nav links for mobile */
     header nav ul {
         flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-    }
-
-    header nav ul li {
-        width: 100%;
+        align-items: flex-end;
+        width: 85%;
     }
 
     header nav ul li a {
         width: 100%;
         padding: 10px 0;
+        font-size: 1.2rem;
     }
+
+    .btn-book {
+        margin-top: 10px;
+        padding: 10px 15px;
+        background-color: #2d6788;
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        width: 40%; /* Set the width */
+        display: block; /* Make it block-level for alignment */
+        margin-left: auto; /* Push the button to the right */
+        margin-right: 0; /* Ensure no extra margin on the right */
+    }
+    
 }
-
-
-
 
 
 
@@ -280,15 +285,7 @@ header nav {
         font-size: 1.8rem; /* Slightly smaller title */
     }
 
-    header nav ul {
-        flex-direction: column;
-        gap: 10px; /* Reduce gap between links */
-    }
 
-    .btn-book {
-        width: 100%; /* Full-width button */
-        text-align: center;
-    }
 
     #background-container {
         background-size: auto 100%; /* Scale background image for smaller screens */
@@ -422,9 +419,40 @@ header nav {
     z-index: 2; /* Ensure text is above the image */
 }
 
+/* Stack therapy */
 
+@media (max-width: 768px) {
 
+    /* Hide H1 and H2 inside #surface */
+    #surface h1, 
+    #surface h2 {
+        display: none; /* Remove both H1 and H2 */
+    }
+    
+    /* Hide only the paragraphs outside the therapy containers */
+    #surface > .surface-content > p {
+        display: none; /* Hide specific text elements */
+    }
 
+    /* Keep the therapy containers stacked */
+    .therapy-links {
+        margin-top: 145px;
+        flex-direction: column; /* Stack the links vertically */
+        align-items: center; /* Center-align the stacked links */
+        gap: 10px; /* Add spacing between stacked links */
+    }
+    .therapy-image-container {
+        height: 25vh; /* 25% of the viewport height */
+        width: auto;
+        padding: 0; /* Remove any fixed padding */
+    }
+    .therapy-image {
+        width: 100%; /* Ensure the image fits the container */
+        height: 100%; /* Stretch image to fill the container height */
+        object-fit: contain; /* Maintain aspect ratio while filling */
+    }
+
+}
 
 
 
@@ -782,7 +810,7 @@ header nav {
 .faq-form-container {
     display: flex; /* Flexbox for side-by-side layout */
     justify-content: space-between; /* Space out the sections */
-    align-items: flex-start; /* Align items at the top */
+    align-items: center; /* Align items at the top */
     padding: 50px;
     background-color: #faf5ea;
     border-radius: 10px;
@@ -792,18 +820,20 @@ header nav {
 
 /* FAQ Section Styling (Left Half) */
 .left-half {
-    flex: 1; /* Take half of the space */
-    max-width: 50%; /* Ensure it stays within half of the page */
-    padding-left: 200px;
+    flex: 1; /* Allow it to take up space */
+    max-width: 50%; /* Limit it to half the width */
+    justify-content: flex-end; /* Align this container to the bottom (end) */
     font-family: 'Playfair Display', serif;
     color: #2d6788;
-    margin: 0 auto; /* Center content within the left half */
+    padding-right: 0;
     text-align: center; /* Center text */
 }
 
 /* Title Styling (h2) */
 .left-half h2 {
+    width: 70%; /* Set specific width for stability */
     font-size: 2rem;
+    margin: 0 0 15px auto; /* Align the element to the right */
     margin-bottom: 30px;
     text-align: center; /* Center the h2 text */
 }
@@ -811,21 +841,22 @@ header nav {
 /* Service Item */
 .service-item {
     margin-bottom: 20px; /* Add some bottom margin for spacing */
+    
 }
 
 /* Service Header Styling */
 .service-header {
-    width: 85%; /* Set specific width for stability */
+    width: 70%; /* Set specific width for stability */
     color: #2d6788;
     font-size: 1.2rem;
     font-weight: bold;
     padding: 15px 20px; /* Use consistent padding */
     cursor: pointer;
-    text-align: left; /* Align text to the left */
+    text-align: center; /* Center the text */
     position: relative; /* To position the '+' at the end */
     transition: background-color 0.3s ease;
     border-bottom: 1px solid #2d6788; /* Single line below the question */
-    margin: 0 auto 15px auto; /* Center the element within the container and add spacing below */
+    margin: 0 0 15px auto; /* Align the element to the right */
 }
 
 /* Service Header Hover Effect */
@@ -845,18 +876,28 @@ header nav {
 
 /* Service Details Styling */
 .service-details {
-    width: 85%; /* Set specific width for stability */
+    width: 70%; /* Set specific width for stability */
     display: none; /* Initially hidden */
     padding: 15px 20px;
     background-color: #f9f9f9;
     color: #2d6788;
     text-align: center; /* Center the text */
-    margin: 0 auto; /* Center the element within the container */
+    margin: 0 0 15px auto; /* Align the element to the right */
     margin-bottom: 20px; /* Space below the service details */
 }
+.faq-message {
+    font-size: 0.9rem; /* Adjust the font size */
+    font-weight: bold; /* Make it bold for emphasis */
+    color: #2d6788; /* Match your theme's color */
+    margin-top: 35px; /* Add spacing above the text */
+    text-align: right; /* Center-align the text */
+}
 
-
-
+@media (max-width: 768px) {
+    .faq-message {
+        display: none; /* Hide the message on screens smaller than 768px */
+    }
+}
 
 
 
@@ -869,13 +910,13 @@ header nav {
     max-width: 50%; /* Ensure it stays within half of the page */
     display: flex; /* Use Flexbox to align elements */
     flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Center elements horizontally */
+    justify-content: flex-start;
     margin: 0;
-    padding-right: 200px;
     text-align: center; /* Center text within the container */
 }
 
 .right-half h2 {
+    max-width: 70%; /* Limit the width for better centering */
     font-size: 2rem;
     margin-bottom: 20px;
     color: #2d6788;
@@ -883,8 +924,8 @@ header nav {
 }
 
 #contact-form {
-    width: 100%; /* Take full width of the parent container */
-    max-width: 80%; /* Limit the width for better centering */
+
+    max-width: 70%; /* Limit the width for better centering */
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -927,22 +968,56 @@ header nav {
 }
 
 
-/* Responsive Adjustments */
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 768px) {
     .faq-form-container {
         flex-direction: column; /* Stack FAQ and form vertically on smaller screens */
-        align-items: center;
-        gap: 20px; /* Reduce gap for smaller screens */
+        align-items: center; /* Center align both sections */
+        gap: 20px; /* Adjust spacing between stacked sections */
     }
 
-    .left-half, .right-half {
-        max-width: 100%; /* Full width on smaller screens */
+    .left-half,
+    .right-half {
+        margin: 0;
+        max-width: 100%;
+        width: 100%; /* Take up 70% of the parent container width */
+        flex: none; /* Disable equal space sharing for stacked layout */
     }
 
+    .left-half h2,
+    .right-half h2 {
+        margin: 0;
+        max-width: 100%;
+        width: 100%; /* Ensure the headings take up full width of their containers */
+        text-align: center; /* Center-align the text */
+        margin-bottom: 20px; /* Add spacing below the headings */
+    }
+
+    .service-header, .service-details {
+        width: 100%; /* Full width for FAQ service headers */
+    }
     #contact-form {
+        max-width: 100%;
         width: 100%;
     }
+    
+
+    
 }
+
+
+
+
+
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
