@@ -1,3 +1,7 @@
+function sanitizeInput(input) {
+    return DOMPurify.sanitize(input);
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     
     // Handle "FLOW" appearing first
@@ -90,9 +94,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const templateID = 'template_p2h4p4l'; // Replace with your actual Template ID
 
         const params = {
-            name: document.getElementById("name").value,
-            email: document.getElementById("email").value,
-            message: document.getElementById("message").value
+            name: sanitizeInput(document.getElementById("name").value),
+            email: sanitizeInput(document.getElementById("email").value),
+            message: sanitizeInput(document.getElementById("message").value)
         };
 
         // Validate form inputs
