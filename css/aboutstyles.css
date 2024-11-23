@@ -692,8 +692,8 @@ footer {
 }
 
 .footer-left h2 {
-    font-size: 1.5rem; /* Slightly larger text */
-    margin: 0; /* Remove default margins */
+    font-size: 1.2rem; /* Slightly larger text */
+    margin-bottom: 10px;
 }
 
 /* Middle Section */

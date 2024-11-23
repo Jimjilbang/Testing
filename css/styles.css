@@ -263,34 +263,6 @@ header nav ul li a:hover {
 
 
 
-/* Responsive Design with Media Queries */
-@media (max-width: 768px) {
-    body {
-        font-size: 0.9rem; /* Slightly smaller text on mobile */
-    }
-
-    .top-bar {
-        font-size: 0.7rem;
-        padding: 3px 0;
-        height: 25px;
-    }
-
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px 20px;
-    }
-
-    header h1 {
-        font-size: 1.8rem; /* Slightly smaller title */
-    }
-
-
-
-    #background-container {
-        background-size: auto 100%; /* Scale background image for smaller screens */
-    }
-}
 
 @media (max-width: 480px) {
     header h1 {
@@ -325,15 +297,18 @@ header nav ul li a:hover {
     
 }
 
-#surface h1 {
+
+
+
+
+.flow-title {
     margin: 250px 0 0px; /* Spacing above and below */
     font-size: 4rem; /* Increase font size for H1 */
     line-height: 1.2; /* Adjust line spacing for H1 */
     color: #2d6788; /* Ensure text color is applied */
 }
 
-/* Style for H1 */
-#surface h2 {
+.flow-subtitle {
 
     font-size: 1.5rem; /* Adjusted for better emphasis */
     margin: 0;
@@ -341,6 +316,12 @@ header nav ul li a:hover {
     color: #2d6788;
 
 }
+
+
+
+
+
+
 
 /* Style for Paragraphs */
 #surface p {
@@ -423,20 +404,51 @@ header nav ul li a:hover {
 
 @media (max-width: 768px) {
 
+
+    body {
+        font-size: 0.9rem; /* Slightly smaller text on mobile */
+    }
+
+    .top-bar {
+        font-size: 0.7rem;
+        padding: 3px 0;
+        height: 25px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+
+    header h1 {
+        font-size: 1.8rem; /* Slightly smaller title */
+    }
+
+
+
+    #background-container {
+        background-size: auto 100%; /* Scale background image for smaller screens */
+    }
+
     /* Hide H1 and H2 inside #surface */
     #surface h1, 
     #surface h2 {
         display: none; /* Remove both H1 and H2 */
     }
     
-    /* Hide only the paragraphs outside the therapy containers */
-    #surface > .surface-content > p {
-        display: none; /* Hide specific text elements */
+    .hide-on-mobile {
+        display: none;
+    }
+    #surface .spaced {
+        margin-top: 110px; /* Adjust the spacing as needed */
+        margin-bottom: 0;
+        font-size: 1rem;
     }
 
     /* Keep the therapy containers stacked */
     .therapy-links {
-        margin-top: 145px;
+        margin-top: 10px;
         flex-direction: column; /* Stack the links vertically */
         align-items: center; /* Center-align the stacked links */
         gap: 10px; /* Add spacing between stacked links */
@@ -614,22 +626,70 @@ header nav ul li a:hover {
 
 /* Styling for the titles under icons */
 #midwater .icon-box h4 {
-    font-size: 1.2rem; /* Title font size */
+    font-size: 1.4rem; /* Title font size */
     margin-bottom: 5px; /* Space below the title */
-    color: #000000; /* Match the text color */
+    color: #faf5ea; /* Match the text color */
 }
 
 /* Styling for the text under icons */
 #midwater .icon-box p {
     font-size: 1rem; /* Smaller font size for descriptions */
     line-height: 1.5; /* Improve readability */
-    color: #000000; /* Text color for readability */
+    color: #faf5ea; /* Text color for readability */
     margin-bottom: 30px; /* Space below each paragraph */
     text-align: center; /* Center-align text */
     width: 100%; /* Ensure paragraph spans the full width */
     max-width: none; /* Remove any inherited max-width restrictions */
 }
 /* Style for Paragraphs */
+
+@media (max-width: 768px) {
+    #midwater .icon-section {
+        flex-direction: column; /* Stack the boxes vertically */
+        justify-content: center; /* Center the stacked elements */
+        align-items: center; /* Align items in the center */
+    }
+
+    #midwater .icon-box {
+        width: 100%; /* Make each box span the full width */
+        margin-bottom: 20px; /* Add spacing between stacked boxes */
+    }
+}
+
+
+
+
+/* Approach Container */
+.approach-container {
+    padding: 20px;
+    background-color: rgba(247, 249, 252, 0.2); /* Optional light background for contrast */
+    color: #2d6788; /* Match theme colors */
+    margin: 20px auto; /* Center the block */
+    width: 100%; /* Ensure it spans the width of the parent */
+    text-align: center; /* Center-align text */
+}
+
+/* Approach Heading */
+.approach-container h2 {
+    font-size: 1.4rem; /* Larger heading size */
+    margin-bottom: 15px;
+    font-family: 'Playfair Display', serif; /* Consistent typography */
+}
+
+/* Approach Paragraphs */
+#midwater .approach-container p {
+    max-width: 65%;
+    font-size: 1rem; /* Standard font size */
+    line-height: 1.6; /* Improve readability */
+    
+    margin: 0 auto; /* Center the paragraphs horizontally */
+    margin-bottom: 30px; /* Add spacing between paragraphs */
+    text-align: center; /* Center-align text inside the paragraph */
+}
+
+
+
+
 
 
 
@@ -672,7 +732,7 @@ header nav ul li a:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     text-align: center; /* Center-align main text */
     font-size: 1.2rem; /* Adjust font size */
-    color: #000000; /* Text color for readability */
+    color: #faf5ea; /* Text color for readability */
 }
 
 /* Styling for the icon section */
@@ -709,9 +769,10 @@ header nav ul li a:hover {
 
 /* Styling for the titles under icons */
 #midwater .AOF-box h4 {
-    font-size: 1.2rem; /* Consistent title font size */
+    font-size: 1.4rem; /* Consistent title font size */
     margin: 10px 0; /* Add spacing between title and icon */
     text-align: center; /* Center the titles */
+    color: #faf5ea;
 }
 
 /* Styling for the text under icons */
@@ -721,10 +782,23 @@ header nav ul li a:hover {
     padding: 0; /* Remove extra padding */
     text-align: center; /* Center-align text */
     max-width: 100%; /* Restrict text width for better alignment */
+    color: #faf5ea;
 }
 
 
+@media (max-width: 768px) {
+    #midwater .AOF-section {
+        flex-direction: column; /* Stack boxes vertically */
+        align-items: center; /* Center-align stacked boxes */
+        gap: 30px; /* Add vertical spacing between stacked boxes */
+    }
 
+    #midwater .AOF-box {
+        width: 100%; /* Make each box span the full width */
+        max-width: 300px; /* Optional: Set a max width for readability */
+        margin: 0 auto; /* Center each box horizontally */
+    }
+}
 
 
 /* Bubble Container */
@@ -1009,18 +1083,6 @@ header nav ul li a:hover {
         max-width: 100%;
         width: 100%;
     }
-    
-
-    
-}
-
-
-
-
-
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
     .faq-container {
         padding: 20px;
     }
@@ -1028,14 +1090,98 @@ header nav ul li a:hover {
     #faq {
         max-width: 100%;
     }
+
+    
+
+    
 }
 
 
 
-/* Footer Styling */
+
+
+
+/* Footer Container */
 footer {
-    text-align: center;
-    padding: 20px;
     background-color: #2d6788;
     color: #faf5ea;
+    padding: 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items to the top */
+    gap: 20px;
+    padding: 20px;
+    max-width: 80%;
+    margin: 0 auto; /* Center the footer container */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+/* Left Section */
+.footer-left {
+    display: flex; /* Align logo and text horizontally */
+    align-items: center; /* Vertically align logo with text */
+    flex: 1; /* Make the left section take up more space */
+    gap: 10px; /* Add spacing between logo and text */
+}
+
+.footer-left img.footer-logo {
+    max-width: 50px; /* Adjust logo size */
+    height: auto;
+}
+
+.footer-left h2 {
+    font-size: 1.2rem; /* Slightly larger text */
+    margin-bottom: 10px;
+}
+
+/* Middle Section */
+.footer-middle {
+    flex: 0.7; /* Adjust width to balance spacing */
+    margin-right: 50px; /* Increase spacing from the left section */
+}
+
+.footer-middle h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.footer-middle p {
+    margin: 5px 0;
+}
+
+/* Link Styling for Email */
+.footer-middle a {
+    color: #faf5ea;
+    text-decoration: none;
+}
+
+.footer-middle a:hover {
+    text-decoration: underline;
+}
+
+/* Right Section */
+.footer-right {
+    flex: 0.5; /* Reduce width slightly to bring it closer to the middle section */
+}
+
+.footer-right h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.footer-right p {
+    margin: 5px 0;
+    line-height: 1.5; /* Adjust spacing for readability */
+}
+
+/* Copyright Section */
+.footer-copyright {
+    text-align: center;
+    border-top: 1px solid #faf5ea;
+    margin-top: 20px;
+    padding-top: 10px;
+    font-size: 0.9rem;
 }
