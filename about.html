@@ -151,6 +151,9 @@
                             <p>Our sessions incorporate art and play to help children express and make sense of their emotions. In a supportive and engaging environment, young ones can explore their feelings naturally and develop healthy coping skills.</p>
                         </div>
                     </div>
+                    <p class="faq-message">
+                        Any more questions, message us here ---->
+                    </p>
                 </div>
             </div>
             
@@ -159,15 +162,16 @@
                 <h2>Contact Us</h2>
                 <form id="contact-form">
                     <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
-                    
+                    <input type="text" id="name" name="name" required pattern="[a-zA-Z\s]+" title="Only letters and spaces are allowed.">
+                
                     <label for="email">Email:</label>
                     <input type="email" id="email" name="email" required>
-                    
+                
                     <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-                    
+                    <textarea id="message" name="message" rows="2" required></textarea>
+                
                     <button type="button" id="send-button">Send Message</button>
+                
                 </form>
             </div>
         </section>
@@ -184,7 +188,33 @@
     </main>
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Flow Psychotherapy</p>
+        <div class="footer-container">
+            <!-- Left Section -->
+            <div class="footer-left">
+                <h2>Flow Psychotherapy Clinic</h2>
+                <img src="path-to-logo.png" alt="Flow Psychotherapy Logo" class="footer-logo">
+                
+            </div>
+    
+            <!-- Middle Section -->
+            <div class="footer-middle">
+                <h3>Contact Us</h3>
+                <p>705-500-5826</p>
+                <a href="mailto:&#x46;&#x6c;&#x6f;&#x77;&#x77;&#x69;&#x74;&#x68;&#x77;&#x61;&#x6e;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;">Email Us</a>
+            </div>
+    
+            <!-- Right Section -->
+            <div class="footer-right">
+                <h3>Visit Us</h3>
+                <p>Unit 2, 150 Duncan Mill Road</p>
+                <p>North York, ON M3B 3M4</p>
+            </div>
+        </div>
+    
+        <!-- Copyright Section -->
+        <div class="footer-copyright">
+            <p>&copy; 2024 Flow Psychotherapy</p>
+        </div>
     </footer>
 
     <script src="js/template.js"></script>
